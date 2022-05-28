@@ -21,32 +21,32 @@ services:
     networks:
      - net
 
-  client1:
-    image: curlimages/curl
-    entrypoint:
-    - /ratelimiter.sh
-    volumes:
-      - ./ratelimiter.sh:/ratelimiter.sh
-    networks:
-     - net
+  # client1:
+  #   image: curlimages/curl
+  #   entrypoint:
+  #   - /ratelimiter.sh
+  #   volumes:
+  #     - ./ratelimiter.sh:/ratelimiter.sh
+  #   networks:
+  #    - net
 
-  client2:
-    image: curlimages/curl
-    entrypoint:
-    - /ratelimiter.sh
-    volumes:
-      - ./ratelimiter.sh:/ratelimiter.sh
-    networks:
-     - net
+  # client2:
+  #   image: curlimages/curl
+  #   entrypoint:
+  #   - /ratelimiter.sh
+  #   volumes:
+  #     - ./ratelimiter.sh:/ratelimiter.sh
+  #   networks:
+  #    - net
 
-  client3:
-    image: curlimages/curl
-    entrypoint:
-    - /ratelimiter.sh
-    volumes:
-      - ./ratelimiter.sh:/ratelimiter.sh
-    networks:
-     - net
+  # client3:
+  #   image: curlimages/curl
+  #   entrypoint:
+  #   - /ratelimiter.sh
+  #   volumes:
+  #     - ./ratelimiter.sh:/ratelimiter.sh
+  #   networks:
+  #    - net
 
 networks:
   net:
