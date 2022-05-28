@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  loadbalancer:
+    image: haproxy:latest
+    ports:
+     - 8000:8000
+     - 10000:10000
+    volumes:
+    - ./haproxy.conf:/usr/local/etc/haproxy/haproxy.cfg
+    networks:
+     - net
+
+  nginx:
+    image: nginx
+    networks:
+     - net
+
+  echo:
+    image: fl64/echo-http
+    networks:
+     - net
+
+  client1:
+    image: curlimages/curl
+    entrypoint:
+    - /ratelimiter.sh
+    volumes:
+      - ./ratelimiter.sh:/ratelimiter.sh
+    networks:
+     - net
+
+  client2:
+    image: curlimages/curl
+    entrypoint:
+    - /ratelimiter.sh
+    volumes:
+      - ./ratelimiter.sh:/ratelimiter.sh
+    networks:
+     - net
+
+  client3:
+    image: curlimages/curl
+    entrypoint:
+    - /ratelimiter.sh
+    volumes:
+      - ./ratelimiter.sh:/ratelimiter.sh
+    networks:
+     - net
+
+networks:
+  net:
