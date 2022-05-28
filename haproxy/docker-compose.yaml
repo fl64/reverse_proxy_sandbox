@@ -6,6 +6,7 @@ services:
     ports:
      - 8000:8000
      - 10000:10000
+     - 8405:8405
     volumes:
     - ./haproxy.conf:/usr/local/etc/haproxy/haproxy.cfg
     networks:
